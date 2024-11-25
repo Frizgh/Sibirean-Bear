@@ -1,0 +1,68 @@
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: #65c5c1;
+}
+
+
+.logo {
+    width: 80px;
+}
+
+.socityIMG {
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.socityIMG:hover {
+    transform: scale(1.1);
+}
+
+ul {
+    display: flex;
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.navMain {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    width: 1000px;
+    color: white;
+    font-size: larger;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.menu {
+    display: inline-block;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.menu::after {
+    display: block;
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: #ffffff;
+    transition: width 0.4s ease-in-out;
+}
+
+.menu:hover:after,
+.menu:focus:after {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+}
