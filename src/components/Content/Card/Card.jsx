@@ -1,13 +1,14 @@
-import coffe from '../../../assets/coffe.png'
+
 import style from './Card.module.css'
 import { useState } from 'react'
-import axios from 'axios'
+
 
 export const Card = (props) => {
   const { data, error } = props.useApiDrinks()
   const [count, setCount] = useState(0)
   const [dropMenu, setDropMenu] = useState(false)
   const [line, setLine] = useState(false)
+  const [price, setPrice] = useState('')
 
   const increment = () => {
     setCount(count + 1)
@@ -18,6 +19,10 @@ export const Card = (props) => {
     }
   }
 
+  const handleSelectSize = (price) => {
+    setPrice(price)
+  }
+
   console.log(data)
   return data.map((data) => {
     return (
@@ -26,8 +31,11 @@ export const Card = (props) => {
           <img src={data.image} alt="" />
         </div>
         <h3>{data.title}</h3>
-        <div>
-          <div>
+        <div className={style.sizeContainer}>
+          {data.size.map((size,index) => <button id={index} onClick={()=>handleSelectSize(data.price[index])}>{size}</button>)}
+        </div>
+        
+          <div className={style.optionContainer}>
             <ul className={style.option}>
               <li>
                 Сахар : {count}
@@ -50,8 +58,8 @@ export const Card = (props) => {
               </li>
             </ul>
           </div>
-        </div>
-        <button className={style.add}>Добавить в корзину</button>
+        
+        <button className={style.add}>Добавить в корзину: {price} руб.</button>
       </div>
     )
   })

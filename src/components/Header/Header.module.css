@@ -2,14 +2,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 10vh;
+    height: 8vh;
     width: 100%;
     background-color: #65c5c1;
+    font-size: 35px ;
+    text-wrap: nowrap;
 }
 
 
 .logo {
-    width: 80px;
+    width: 100px;
 }
 
 .socityIMG {
