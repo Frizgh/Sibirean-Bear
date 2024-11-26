@@ -5,11 +5,23 @@
     align-items: center;
     border: 1px solid rgb(201, 198, 198);
     border-radius: 0.75rem;
+    overflow: transparent;
     overflow: hidden;
 }
 
-img {
+.imgContainer {
+    overflow: hidden;
+    height: 300px;
+}
+
+.imgContainer>img {
     width: 400px;
+    height: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.imgContainer>img:hover {
+    transform: scale(1.06);
 }
 
 .option {
@@ -31,6 +43,22 @@ img {
     height: 3em;
     border-radius: 50%;
     border: none;
+    background-color: #65c5c1;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+    outline: none;
+    cursor: pointer;
+}
+
+.option>li>button:hover,
+.buttonContainer>button:hover {
+    background-color: #53b5b8;
+}
+
+.option>li>button:active,
+.buttonContainer>button:active {
+    background-color: #42a5a8;
+    ;
 }
 
 .del {
@@ -38,6 +66,21 @@ img {
     text-decoration-color: red;
 }
 
-.imgContainer {
-    border-bottom: 1px solid rgb(201, 198, 198);
+.add {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    background-color: #65c5c1;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.add:hover {
+    background-color: #53b5b8;
+    cursor: pointer;
+}
+
+.add:active {
+    background-color: #42a5a8;
+    transform: translateY(2px);
 }

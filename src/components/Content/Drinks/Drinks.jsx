@@ -1,19 +1,9 @@
 import { Card } from '../Card/Card'
 import style from './Drinks.module.css'
-export const Drinks = () => {
+export const Drinks = (props) => {
   return (
     <div className={style.content}>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card useApiDrinks={props.useApiDrinks} />
     </div>
   )
 }
