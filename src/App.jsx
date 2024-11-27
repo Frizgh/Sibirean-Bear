@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className={StylePropertyMap.content}>
+      <div className="main-content">
         <Routes>
           <Route
             path="/drinks"

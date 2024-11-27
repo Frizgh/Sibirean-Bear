@@ -3,7 +3,9 @@
     margin: 0;
     font-family: 'Open Sans Condensed', sans-serif;
 }
+
+
 body {
-    overflow-y: hidden;
     overflow-x: hidden;
+    scrollbar-color: #53b5b8;
 }
