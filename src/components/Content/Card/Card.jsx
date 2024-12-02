@@ -1,42 +1,54 @@
 import style from './Card.module.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { decrement, increment, setPrice } from '../../../store/counterSlice'
+import {
+  fetchDrinks,
+  selectDrinks,
+  selectLoading,
+  selectError,
+} from '../../../store/drinksSlice'
 
-export const Card = (props) => {
-  const { data, error } = props.useApiDrinks()
-  const [count, setCount] = useState(0)
+export const Card = () => {
   const [dropMenu, setDropMenu] = useState(false)
-  const [line, setLine] = useState(false)
-  const [price, setPrice] = useState('')
+  const dispatch = useDispatch()
 
-  const increment = () => {
-    setCount(count + 1)
-  }
-  const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1)
-    }
+  const drinks = useSelector(selectDrinks)
+  const loading = useSelector(selectLoading)
+  const error = useSelector(selectError)
+  const counters = useSelector((state) => state.counterDrinks)
+
+  useEffect(() => {
+    dispatch(fetchDrinks())
+  }, [dispatch])
+
+  if (loading) {
+    return <div>Loading...</div>
   }
 
-  const handleSelectSize = (price) => {
-    setPrice(price)
+  if (error) {
+    return <div>Error: {error}</div>
   }
 
-  console.log(data)
-  return data.map((data) => {
+  return drinks.map((drink) => {
+    const counter = counters[drink.id]?.counter || 0
+    const price = counters[drink.id]?.price || 0
     return (
-      <div className={style.card} key={data.id}>
+      <div className={style.card} key={drink.id}>
         <div className={style.imgContainer}>
-          <img src={data.image} alt="" />
+          <img src={drink.image} alt={drink.title} />
         </div>
-        <h3>{data.title}</h3>
+        <h3>{drink.title}</h3>
         <div className={style.sizeContainer}>
-          {data.size.map((size, index) => (
+          {drink.size.map((size, index) => (
             <button
               id={index}
-              onClick={() => handleSelectSize(data.price[index])}
               key={index}
+              onClick={() =>
+                dispatch(setPrice({ id: drink.id, price: drink.price[index] }))
+              }
             >
-              {size}
+              {size}мл
             </button>
           ))}
         </div>
@@ -44,19 +56,18 @@ export const Card = (props) => {
         <div className={style.optionContainer}>
           <ul className={style.option}>
             <li>
-              Сахар : {count}
+              Сахар: {counter}
               <div className={style.buttonContainer}>
-                <button onClick={decrement}>-</button>
-                <button onClick={increment}>+</button>
+                <button onClick={() => dispatch(decrement({ id: drink.id }))}>
+                  -
+                </button>
+                <button onClick={() => dispatch(increment({ id: drink.id }))}>
+                  +
+                </button>
               </div>
             </li>
-            <li className={line ? style.del : ''}>
-              Корица{' '}
-              {!line ? (
-                <button onClick={() => setLine(true)}>X</button>
-              ) : (
-                <button onClick={() => setLine(false)}>+</button>
-              )}
+            <li>
+              Корица <button>X</button>
             </li>
             <li>
               Сироп
@@ -65,7 +76,7 @@ export const Card = (props) => {
           </ul>
         </div>
 
-        <button className={style.add}>Добавить в корзину: {price} руб.</button>
+        <button className={style.add}>Добавить в корзину:{price} руб.</button>
       </div>
     )
   })
