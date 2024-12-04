@@ -1,10 +1,20 @@
 .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     width: 60%;
     column-gap: 25px;
     row-gap: 25px;
     padding: 20px 0px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 25px;
+    row-gap: 25px;
 }

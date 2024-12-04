@@ -15,10 +15,20 @@ const drinksSlice = createSlice({
   name: 'drinks',
   initialState: {
     drinks: [],
+    filteredDrinks: [],
     loading: false,
     error: null,
+    categories: '',
+    uniqCategories: [],
   },
-  reducers: {},
+  reducers: {
+    selectCategories: (state, action) => {
+      state.categories = action.payload
+      state.filteredDrinks = state.drinks.filter(
+        (drink) => drink.categories === state.categories
+      )
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchDrinks.pending, (state) => {
@@ -28,7 +38,16 @@ const drinksSlice = createSlice({
       .addCase(fetchDrinks.fulfilled, (state, action) => {
         state.loading = false
         state.drinks = action.payload
-        console.log(state.drinks)
+        state.uniqCategories = [
+          ...new Set(action.payload.map((drink) => drink.categories)),
+        ]
+        if (state.categories) {
+          state.filteredDrinks = action.payload.filter(
+            (drink) => drink.categories === state.categories
+          )
+        } else {
+          state.filteredDrinks = action.payload
+        }
       })
       .addCase(fetchDrinks.rejected, (state, action) => {
         state.loading = false
@@ -36,9 +55,10 @@ const drinksSlice = createSlice({
       })
   },
 })
-
-export const selectDrinks = (state) => state.drinks.drinks
+export const selectDrinks = (state) => state.drinks.filteredDrinks
 export const selectLoading = (state) => state.drinks.loading
 export const selectError = (state) => state.drinks.error
+export const setUniqCategories = (state) => state.drinks.uniqCategories
 
+export const { selectCategories } = drinksSlice.actions
 export default drinksSlice.reducer

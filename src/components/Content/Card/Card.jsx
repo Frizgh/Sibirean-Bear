@@ -17,7 +17,6 @@ export const Card = () => {
   const loading = useSelector(selectLoading)
   const error = useSelector(selectError)
   const counters = useSelector((state) => state.counterDrinks)
-
   useEffect(() => {
     dispatch(fetchDrinks())
   }, [dispatch])
