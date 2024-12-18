@@ -1,4 +1,3 @@
-// store/drinksSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchDrinks = createAsyncThunk('drinks/fetchDrinks', async () => {
@@ -20,6 +19,7 @@ const drinksSlice = createSlice({
     error: null,
     categories: '',
     uniqCategories: [],
+    syropMenus: {}, // Изменено на объект для хранения состояния меню для каждого напитка
   },
   reducers: {
     selectCategories: (state, action) => {
@@ -27,6 +27,11 @@ const drinksSlice = createSlice({
       state.filteredDrinks = state.drinks.filter(
         (drink) => drink.categories === state.categories
       )
+    },
+    syrupMenu: (state, action) => {
+      const { id, isOpen } = action.payload
+      // Обновляем состояние меню для конкретного напитка
+      state.syropMenus[id] = isOpen
     },
   },
   extraReducers: (builder) => {
@@ -55,10 +60,12 @@ const drinksSlice = createSlice({
       })
   },
 })
+
 export const selectDrinks = (state) => state.drinks.filteredDrinks
 export const selectLoading = (state) => state.drinks.loading
 export const selectError = (state) => state.drinks.error
 export const setUniqCategories = (state) => state.drinks.uniqCategories
+export const selectSyrop = (state) => state.drinks.syropMenus
 
-export const { selectCategories } = drinksSlice.actions
+export const { selectCategories, syrupMenu } = drinksSlice.actions
 export default drinksSlice.reducer
