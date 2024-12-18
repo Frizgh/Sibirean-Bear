@@ -19,7 +19,7 @@ const drinksSlice = createSlice({
     error: null,
     categories: '',
     uniqCategories: [],
-    syropMenus: {}, // Изменено на объект для хранения состояния меню для каждого напитка
+    syropMenus: {},
   },
   reducers: {
     selectCategories: (state, action) => {
@@ -30,7 +30,6 @@ const drinksSlice = createSlice({
     },
     syrupMenu: (state, action) => {
       const { id, isOpen } = action.payload
-      // Обновляем состояние меню для конкретного напитка
       state.syropMenus[id] = isOpen
     },
   },
