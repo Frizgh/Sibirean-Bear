@@ -1,0 +1,31 @@
+.syrupContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    max-height: 90px;
+    gap: 5px;
+    justify-content: left;
+    padding: 5px;
+
+}
+
+.syrupContainer>button {
+    border: none;
+    padding: 2px 1px;
+    background-color: #65c5c1;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: bold;
+
+}
+
+.syrupContainer>button:hover {
+    background-color: #53b5b8;
+    cursor: pointer;
+}
+
+.syrupContainer>button:active {
+    background-color: #42a5a8;
+    transform: translateY(1px);
+}

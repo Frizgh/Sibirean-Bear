@@ -1,5 +1,9 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setSyrup } from '../../../store/drinksSlice'
+import style from './Syrup.module.css'
 
+// Список доступных сиропов
 const syrupList = [
   'Кленовый',
   'Апельсиновый',
@@ -14,11 +18,14 @@ const syrupList = [
 ]
 
 export const Syrup = ({ drinkId }) => {
+  const dispatch = useDispatch()
+
   const handleSyrupSelection = (syrup) => {
-    console.log(`Выбран сироп: ${syrup} для напитка с ID: ${drinkId}`)
+    dispatch(setSyrup({ id: drinkId, syrup }))
   }
+
   return (
-    <div>
+    <div className={style.syrupContainer}>
       {syrupList.map((item, index) => (
         <button key={index} onClick={() => handleSyrupSelection(item)}>
           {item}

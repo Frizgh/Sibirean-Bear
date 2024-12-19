@@ -18,8 +18,9 @@ export const Card = () => {
   const drinks = useSelector(selectDrinks)
   const loading = useSelector(selectLoading)
   const error = useSelector(selectError)
-  const syropMenus = useSelector(selectSyrop) // Получаем объект с состояниями меню
-  const stateId = useSelector((state) => state.counterDrinks)
+  const syropMenus = useSelector(selectSyrop)
+  const stateCounter = useSelector((state) => state.counterDrinks)
+  const stateDrinks = useSelector((state) => state.drinks)
 
   useEffect(() => {
     dispatch(fetchDrinks())
@@ -34,10 +35,14 @@ export const Card = () => {
   }
 
   return drinks.map((drink) => {
-    const counter = stateId[drink.id]?.counter || 0
-    const price = stateId[drink.id]?.price || 0
+    const counter = stateCounter[drink.id]?.counter || 0
+    const price = stateCounter[drink.id]?.price || 0
+    const isSyropMenuOpen = syropMenus[drink.id] || false
+    const syrup = stateDrinks[drink.id]?.syrup || ''
 
-    const isSyropMenuOpen = syropMenus[drink.id] || false // Используем объект с состояниями меню
+    const handleSyrupMenuToggle = () => {
+      dispatch(syrupMenu({ id: drink.id, isOpen: !isSyropMenuOpen }))
+    }
 
     return (
       <div className={style.card} key={drink.id}>
@@ -67,39 +72,46 @@ export const Card = () => {
 
         <div className={style.optionContainer}>
           <ul className={style.option}>
+            {!isSyropMenuOpen && (
+              <>
+                <li>
+                  Сахар: {counter}
+                  <div className={style.buttonContainer}>
+                    <button
+                      onClick={() => dispatch(decrement({ id: drink.id }))}
+                    >
+                      -
+                    </button>
+                    <button
+                      onClick={() => dispatch(increment({ id: drink.id }))}
+                    >
+                      +
+                    </button>
+                  </div>
+                </li>
+                <li>
+                  Корица <button>X</button>
+                </li>
+              </>
+            )}
             <li>
-              Сахар: {counter}
-              <div className={style.buttonContainer}>
-                <button onClick={() => dispatch(decrement({ id: drink.id }))}>
-                  -
-                </button>
-                <button onClick={() => dispatch(increment({ id: drink.id }))}>
-                  +
-                </button>
-              </div>
-            </li>
-            <li>
-              Корица <button>X</button>
-            </li>
-            <li>
-              Сироп {isSyropMenuOpen ? 'Открыто' : 'Закрыто'}
-              <button
-                onClick={() =>
-                  dispatch(
-                    syrupMenu({ id: drink.id, isOpen: !isSyropMenuOpen })
-                  )
-                }
-              >
-                {isSyropMenuOpen ? '-' : '+'}
+              Сироп: {syrup}
+              <button onClick={handleSyrupMenuToggle}>
+                {isSyropMenuOpen ? 'Назад' : '+'}
               </button>
             </li>
           </ul>
         </div>
 
-        {/* Условное отображение меню сиропов */}
-        {isSyropMenuOpen && <Syrup drinkId={drink.id} />}
+        {isSyropMenuOpen && (
+          <div>
+            <Syrup drinkId={drink.id} />
+          </div>
+        )}
 
-        <button className={style.add}>Добавить в корзину: {price} руб.</button>
+        <button className={style.add}>
+          Добавить в корзину: {syrup ? price + 40 : price} руб.
+        </button>
       </div>
     )
   })

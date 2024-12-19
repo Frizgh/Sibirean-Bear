@@ -32,6 +32,13 @@ const drinksSlice = createSlice({
       const { id, isOpen } = action.payload
       state.syropMenus[id] = isOpen
     },
+    setSyrup(state, action) {
+      const { id, syrup } = action.payload
+      if (!state[id]) {
+        state[id] = {}
+      }
+      state[id].syrup = syrup
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -41,7 +48,10 @@ const drinksSlice = createSlice({
       })
       .addCase(fetchDrinks.fulfilled, (state, action) => {
         state.loading = false
-        state.drinks = action.payload
+        state.drinks = action.payload.map((drink) => ({
+          ...drink,
+          syrup: '',
+        }))
         state.uniqCategories = [
           ...new Set(action.payload.map((drink) => drink.categories)),
         ]
@@ -66,5 +76,5 @@ export const selectError = (state) => state.drinks.error
 export const setUniqCategories = (state) => state.drinks.uniqCategories
 export const selectSyrop = (state) => state.drinks.syropMenus
 
-export const { selectCategories, syrupMenu } = drinksSlice.actions
+export const { selectCategories, syrupMenu, setSyrup } = drinksSlice.actions
 export default drinksSlice.reducer
