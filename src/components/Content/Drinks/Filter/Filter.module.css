@@ -1,0 +1,31 @@
+.categoriesContainer>button {
+    padding: 10px;
+    min-width: 150px;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    color: white;
+    background-color: #65c5c1;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.active {
+    background-color: red;
+}
+
+.categoriesContainer>button:hover {
+    background-color: #53b5b8;
+    cursor: pointer;
+}
+
+.categoriesContainer>button:active {
+    background-color: #42a5a8;
+    transform: scale(0.98);
+}
+
+.categoriesContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

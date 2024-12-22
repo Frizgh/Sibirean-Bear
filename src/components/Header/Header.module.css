@@ -1,17 +1,27 @@
 .navigation {
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-between;
     height: 8vh;
     width: 100%;
     background-color: #65c5c1;
-    font-size: 35px ;
-    text-wrap: nowrap;
+    font-size: 35px;
+}
+
+.imgContainer {
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.logo {
+    width: 7vh;
+    padding-left: 10px;
 }
 
 
-.logo {
-    width: 100px;
+.socityContent {
+    padding-right: 10px;
 }
 
 .socityIMG {
@@ -32,15 +42,15 @@ ul {
 }
 
 .navMain {
-
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 200px;
-    width: 1000px;
+    gap: 150px;
     color: white;
-    font-size: larger;
-
+    width: 50%;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal
 }
 
 .menu {
@@ -54,6 +64,7 @@ ul {
 .menu::after {
     display: block;
     content: "";
+    margin-top: 5px;
     height: 3px;
     width: 0%;
     background-color: #ffffff;
@@ -67,4 +78,44 @@ ul {
 
 li {
     list-style-type: none;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: 15%;
+    justify-content: flex-end;
+}
+
+.search {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: medium;
+}
+
+.searchContainer>button {
+    padding: 5px;
+    background: transparent;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    transition: transform 0.1s ease-in-out;
+}
+
+.searchContainer>button:active {
+    transform: scale(0.95);
+}
+
+.searchContainer>div>img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out;
+    padding: 0px 40px;
 }

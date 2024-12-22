@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans Condensed', sans-serif;
 }
+
+
 body {
-    overflow-y: hidden;
     overflow-x: hidden;
+    scrollbar-color: #53b5b8;
 }
