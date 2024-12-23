@@ -3,7 +3,6 @@ import style from './Filter.module.css'
 import { selectCategories } from '../../../../store/drinksSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { setUniqCategories } from '../../../../store/drinksSlice'
-import { useState } from 'react'
 export const Filter = () => {
   const dispatch = useDispatch()
 

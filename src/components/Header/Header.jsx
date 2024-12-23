@@ -46,9 +46,9 @@ export const Header = () => {
 
         <button>Поиск</button>
 
-        <div>
+        <Link to="/shop">
           <img src={cart} alt="" />
-        </div>
+        </Link>
 
         <ul className={style.socityContent}>
           <li>

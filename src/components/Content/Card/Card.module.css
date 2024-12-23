@@ -93,6 +93,11 @@
     transform: translateY(2px);
 }
 
+.active {
+    background-color: #42a5a8 !important;
+    color: white;
+}
+
 .sizeContainer {
     display: flex;
     justify-content: center;
@@ -103,7 +108,7 @@
 
 .sizeContainer>button {
     padding: 5px 20px;
-    background: transparent;
+    background: white;
     border-radius: 0.75rem;
     border: 2px solid #65c5c1;
     outline: none;

@@ -34,17 +34,17 @@ const drinksSlice = createSlice({
       state.syropMenus[id] = isOpen
     },
     setSyrup(state, action) {
-      const { id, syrup} = action.payload
+      const { id, syrup } = action.payload
       if (!state[id]) {
         state[id] = {}
       }
       state[id].syrup = syrup
-      state[id].price += 40
+      state[id].price += state.syrupPrice
     },
     deleteSyrup(state, action) {
       const { id } = action.payload
       if (state[id]) {
-        state[id].price -= 40
+        state[id].price -= state.syrupPrice
         state[id].syrup = null
         state[id].disabled = false
       }
@@ -52,7 +52,7 @@ const drinksSlice = createSlice({
     setDisabled(state, action) {
       const { id, disabled } = action.payload
       if (!state[id]) {
-        state[id] = {disabled: false}
+        state[id] = { disabled: false }
       }
       state[id].disabled = disabled
     },
@@ -76,6 +76,7 @@ const drinksSlice = createSlice({
       const { id, price } = action.payload
       if (!state[id]) {
         state[id] = { price: 0 }
+        state[id] = { sugar: 0 }
       }
       state[id].price = state[id].syrup ? price + state.syrupPrice : price
     },
@@ -116,5 +117,14 @@ export const selectError = (state) => state.drinks.error
 export const setUniqCategories = (state) => state.drinks.uniqCategories
 export const selectSyrop = (state) => state.drinks.syropMenus
 
-export const { selectCategories, syrupMenu, setSyrup, decrementSugar, incrementSugar , setPrice, deleteSyrup,setDisabled} = drinksSlice.actions
+export const {
+  selectCategories,
+  syrupMenu,
+  setSyrup,
+  decrementSugar,
+  incrementSugar,
+  setPrice,
+  deleteSyrup,
+  setDisabled,
+} = drinksSlice.actions
 export default drinksSlice.reducer

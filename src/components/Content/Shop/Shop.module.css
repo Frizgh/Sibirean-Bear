@@ -1,0 +1,136 @@
+.infoWrapper::-webkit-scrollbar {
+    width: 7px;
+}
+
+.infoWrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.infoWrapper::-webkit-scrollbar-thumb {
+    background-color: #65c5c1;
+    border-radius: 20px;
+}
+
+.shopContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: calc(100vh - 117px);
+    width: 90vw;
+    margin: 20px 0px;
+}
+
+.infoWrapper {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    gap: 20px;
+    height: 800px;
+    overflow: auto;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.shopList {
+    display: flex;
+    gap: 20px;
+    width: 96%;
+    min-height: 4em;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.26);
+    border-radius: 0.75rem;
+    padding-right: 20px;
+    overflow: hidden;
+}
+
+
+
+.shopList>img {
+    min-width: 100px;
+    max-width: 100px;
+    height: 100%;
+}
+
+.countContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 80px;
+}
+
+.price {
+    display: flex;
+    justify-content: flex-end;
+    width: 100px;
+}
+
+.countContainer>button {
+    width: 25px;
+    text-align: baseline;
+    font-size: 20px;
+    background-color: #65c5c1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.countContainer>button:hover,
+.buyBlock>button:hover {
+    background-color: #53b5b8;
+}
+
+.countContainer>button:active {
+    background-color: #42a5a8;
+    transform: scale(0.94)
+}
+
+.priceAndCountContainer {
+    display: flex;
+    align-items: baseline;
+    gap: 20px
+}
+
+.itemContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.buyBlock {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100%;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.26);
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.buyBlock>button {
+    width: 100%;
+    padding: 2px 8px;
+    font-size: 20px;
+    background-color: #65c5c1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.buyBlock>button:active {
+    background-color: #42a5a8;
+    transform: translateY(1px);
+}
+
+
+
+.result {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: x-large;
+}

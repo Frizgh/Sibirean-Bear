@@ -1,7 +1,12 @@
 import style from './Card.module.css'
-import { useEffect,useState } from 'react'
+import preloader from '../../../assets/preloader.gif'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrementSugar, incrementSugar, setPrice } from '../../../store/drinksSlice'
+import {
+  decrementSugar,
+  incrementSugar,
+  setPrice,
+} from '../../../store/drinksSlice'
 import { Syrup } from './Syrup'
 import {
   fetchDrinks,
@@ -10,26 +15,30 @@ import {
   selectError,
   selectSyrop,
   syrupMenu,
-  deleteSyrup
+  deleteSyrup,
 } from '../../../store/drinksSlice'
 
 export const Card = () => {
-  const [disabledSyrup,setDisabledSyrup] = useState(false)
-
+  const [activeButtonIndexes, setActiveButtonIndexes] = useState({})
+  const [selectedSize, setSelectedSize] = useState(null)
   const dispatch = useDispatch()
 
   const drinks = useSelector(selectDrinks)
   const loading = useSelector(selectLoading)
   const error = useSelector(selectError)
   const syropMenus = useSelector(selectSyrop)
-  const stateDrinks = useSelector((state) => state.drinks) 
+  const stateDrinks = useSelector((state) => state.drinks)
 
   useEffect(() => {
     dispatch(fetchDrinks())
   }, [dispatch])
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div>
+        <img src={preloader} alt="" />
+      </div>
+    )
   }
 
   if (error) {
@@ -48,11 +57,38 @@ export const Card = () => {
     }
 
     function addToBasketShop() {
-      console.log({id: drink.id, title: drink.title, price , syrup})
+      const newShopItem = {
+        img: drink.image,
+        id: drink.id,
+        title: drink.title,
+        selectedSize,
+        price,
+        totalPrice: price,
+        syrup,
+        count: 1,
+      }
+
+      const existingShops = JSON.parse(localStorage.getItem('shops')) || []
+
+      const existingItemIndex = existingShops.findIndex(
+        (item) =>
+          item.id === drink.id &&
+          item.selectedSize === selectedSize &&
+          item.syrup === syrup
+      )
+
+      if (existingItemIndex !== -1) {
+        existingShops[existingItemIndex].count += 1
+        existingShops[existingItemIndex].totalPrice += price
+      } else {
+        existingShops.push(newShopItem)
+      }
+
+      localStorage.setItem('shops', JSON.stringify(existingShops))
     }
 
     function removeSyrop() {
-      dispatch(deleteSyrup({ id: drink.id}))
+      dispatch(deleteSyrup({ id: drink.id }))
     }
 
     return (
@@ -69,11 +105,19 @@ export const Card = () => {
                 : 0
             return (
               <button
+                className={
+                  activeButtonIndexes[drink.id] === index ? style.active : ''
+                }
                 id={index}
                 key={index}
-                onClick={() =>
+                onClick={() => {
                   dispatch(setPrice({ id: drink.id, price: drinkPrice }))
-                }
+                  setActiveButtonIndexes((prev) => ({
+                    ...prev,
+                    [drink.id]: index,
+                  }))
+                  setSelectedSize(size)
+                }}
               >
                 {size}мл
               </button>
@@ -106,7 +150,8 @@ export const Card = () => {
               </>
             )}
             <li>
-              Сироп: {syrup}{syrup ?<button onClick={removeSyrop}>X</button>: ''}
+              Сироп: {syrup}
+              {syrup ? <button onClick={removeSyrop}>X</button> : ''}
               <button onClick={handleSyrupMenuToggle}>
                 {isSyropMenuOpen ? 'Назад' : '+'}
               </button>

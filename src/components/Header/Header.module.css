@@ -71,10 +71,16 @@ ul {
     transition: width 0.4s ease-in-out;
 }
 
+
+
 .menu:hover:after,
-.menu:focus:after {
+.menu:focus:after,
+.menu.active:after {
     width: 100%;
 }
+
+
+
 
 li {
     list-style-type: none;
