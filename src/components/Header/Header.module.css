@@ -39,6 +39,7 @@ ul {
 
 .menu {
     list-style-type: none;
+    white-space: nowrap
 }
 
 .navMain {
@@ -90,7 +91,7 @@ li {
     display: flex;
     align-items: center;
     gap: 2px;
-    width: 15%;
+    width: 20%;
     justify-content: flex-end;
 }
 
@@ -101,6 +102,7 @@ li {
     background: transparent;
     color: white;
     font-size: medium;
+    width: 50%;
 }
 
 .searchContainer>button {
@@ -124,4 +126,9 @@ li {
     height: 35px;
     transition: transform 0.3s ease-in-out;
     padding: 0px 40px;
+}
+
+.basketShop {
+    width: 40px;
+    padding: 0 20px;
 }

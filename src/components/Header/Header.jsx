@@ -47,7 +47,7 @@ export const Header = () => {
         <button>Поиск</button>
 
         <Link to="/shop">
-          <img src={cart} alt="" />
+          <img src={cart} alt="корзина" className={style.basketShop} />
         </Link>
 
         <ul className={style.socityContent}>

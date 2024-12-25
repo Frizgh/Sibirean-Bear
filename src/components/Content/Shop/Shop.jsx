@@ -1,26 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import style from './Shop.module.css'
+import { ShopItem } from './ShopComponents/ShopItem'
+import { BasketSummary } from './ShopComponents/BasketSummary'
 
 export const Shop = () => {
   const [shopItems, setShopItems] = useState([])
   const [counts, setCounts] = useState({})
 
-  const generateUniqueId = () => {
-    return Date.now() + Math.random()
-  }
-
   useEffect(() => {
     const shopList = localStorage.getItem('shops')
     if (shopList) {
-      const items = JSON.parse(shopList).map((item) => ({
-        ...item,
-        id: generateUniqueId(),
-      }))
+      const items = JSON.parse(shopList)
       setShopItems(items)
-      const initialCounts = {}
-      items.forEach((item) => {
-        initialCounts[item.id] = item.count || 1
-      })
+      const initialCounts = items.reduce((acc, item) => {
+        acc[item.id] = item.count || 1
+        return acc
+      }, {})
       setCounts(initialCounts)
     }
   }, [])
@@ -29,80 +24,55 @@ export const Shop = () => {
     localStorage.setItem('shops', JSON.stringify(items))
   }
 
-  const increment = (id) => {
-    setCounts((prevCounts) => {
-      const newCount = prevCounts[id] + 1
-      const updatedCounts = {
-        ...prevCounts,
-        [id]: newCount,
-      }
-      updatePricesInLocalStorage(updatedCounts)
-      return updatedCounts
-    })
-  }
-
-  const decrement = (id) => {
-    setCounts((prevCounts) => {
-      const newCount = Math.max(prevCounts[id] - 1, 1)
-      const updatedCounts = {
-        ...prevCounts,
-        [id]: newCount,
-      }
-      updatePricesInLocalStorage(updatedCounts)
-      return updatedCounts
-    })
-  }
-
   const updatePricesInLocalStorage = (updatedCounts) => {
-    const updatedItems = shopItems.map((item) => {
-      const count = updatedCounts[item.id] || item.count
-      const price = item.price
-      return {
-        ...item,
-        count: count,
-        totalPrice: price * count,
-      }
-    })
+    const updatedItems = shopItems.map((item) => ({
+      ...item,
+      count: updatedCounts[item.id] || item.count,
+      totalPrice: item.price * (updatedCounts[item.id] || item.count),
+    }))
     setShopItems(updatedItems)
     updateLocalStorage(updatedItems)
   }
 
+  const clearBasketShop = () => {
+    localStorage.removeItem('shops')
+    setShopItems([])
+    setCounts({})
+  }
+
+  const deleteItem = (id) => {
+    const updatedItems = shopItems.filter((item) => item.id !== id)
+    setShopItems(updatedItems)
+    updateLocalStorage(updatedItems)
+    setCounts((prevCounts) => {
+      const newCounts = { ...prevCounts }
+      delete newCounts[id]
+      return newCounts
+    })
+  }
+
+  const totalSum = shopItems.reduce(
+    (sum, item) => sum + (item.totalPrice || item.price * item.count),
+    0
+  )
+
   return (
     <div className={style.shopContainer}>
       <div className={style.infoWrapper}>
+        <button onClick={clearBasketShop} className={style.clearAll}>
+          Очистить корзину
+        </button>
         {shopItems.map((item) => (
-          <div key={item.id} className={style.shopList}>
-            <img src={item.img} alt={item.title} />
-            <div className={style.itemContainer}>
-              <div>
-                {item.title} {item.syrup ? `(${item.syrup})` : ''}{' '}
-                {item.selectedSize} мл
-              </div>
-              <div className={style.priceAndCountContainer}>
-                <div className={style.countContainer}>
-                  <button onClick={() => decrement(item.id)}>-</button>
-                  <span>{counts[item.id] || 1}</span>
-                  <button onClick={() => increment(item.id)}>+</button>
-                </div>
-                <div className={style.price}>
-                  {item.totalPrice || item.price * (counts[item.id] || 1)} руб.
-                </div>
-              </div>
-            </div>
-          </div>
+          <ShopItem
+            key={item.id}
+            item={item}
+            count={counts[item.id] || 1}
+            updatePricesInLocalStorage={updatePricesInLocalStorage}
+            deleteItem={deleteItem}
+          />
         ))}
       </div>
-      <div className={style.buyBlock}>
-        <div className={style.result}>
-          Итого:
-          {shopItems.reduce(
-            (sum, item) => sum + (item.totalPrice || item.price * item.count),
-            0
-          )}
-          руб.
-        </div>
-        <button>Оплатить</button>
-      </div>
+      <BasketSummary totalSum={totalSum} />
     </div>
   )
 }
