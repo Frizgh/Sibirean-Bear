@@ -75,21 +75,26 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .countContainer>button:hover,
-.buyBlock>button:hover {
+.buyBlock>button:hover,
+.deleteItemsFromBasketShop:hover,
+.clearAll:hover {
     background-color: #53b5b8;
 }
 
-.countContainer>button:active {
+.countContainer>button:active,
+.deleteItemsFromBasketShop:active,
+.clearAll:active {
     background-color: #42a5a8;
     transform: scale(0.94)
 }
 
 .priceAndCountContainer {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 20px
 }
 
@@ -133,4 +138,26 @@
     height: 100%;
     align-items: center;
     font-size: x-large;
+}
+
+.deleteItemsFromBasketShop,
+.clearAll {
+    cursor: pointer;
+    background-color: #65c5c1;
+    border: none;
+    border-radius: 5px;
+    align-items: baseline;
+    transition: background-color 0.2s ease-in-out;
+    color: white;
+}
+
+.clearAll {
+    padding: 8px;
+    font-size: medium;
+}
+
+.deleteItemsFromBasketShop>img {
+    width: 20px;
+    height: 20px;
+    transform: translateY(2px);
 }

@@ -2,16 +2,19 @@
   "name": "pet1",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://Frizgh.github.io/Sibirean-Bear",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.4.0",
     "axios": "^1.7.8",
+    "gh-pages": "^6.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",

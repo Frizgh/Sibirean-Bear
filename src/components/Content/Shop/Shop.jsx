@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import style from './Shop.module.css'
+import deleteICO from '../../../assets/delete.svg'
 
 export const Shop = () => {
   const [shopItems, setShopItems] = useState([])
   const [counts, setCounts] = useState({})
 
-  const generateUniqueId = () => {
-    return Date.now() + Math.random()
-  }
-
   useEffect(() => {
     const shopList = localStorage.getItem('shops')
     if (shopList) {
-      const items = JSON.parse(shopList).map((item) => ({
-        ...item,
-        id: generateUniqueId(),
-      }))
+      const items = JSON.parse(shopList)
       setShopItems(items)
       const initialCounts = {}
       items.forEach((item) => {
@@ -67,9 +61,29 @@ export const Shop = () => {
     updateLocalStorage(updatedItems)
   }
 
+  function clearBasketShop() {
+    localStorage.removeItem('shops')
+    setShopItems([])
+  }
+
+  function deleteItem(id) {
+    const storageItems = JSON.parse(localStorage.getItem('shops'))
+    const updatedItems = storageItems.filter((item) => item.id !== id)
+    localStorage.setItem('shops', JSON.stringify(updatedItems))
+    setShopItems(updatedItems)
+    setCounts((prevCounts) => {
+      const newCounts = { ...prevCounts }
+      delete newCounts[id]
+      return newCounts
+    })
+  }
+
   return (
     <div className={style.shopContainer}>
       <div className={style.infoWrapper}>
+        <button onClick={clearBasketShop} className={style.clearAll}>
+          Очистить корзину
+        </button>
         {shopItems.map((item) => (
           <div key={item.id} className={style.shopList}>
             <img src={item.img} alt={item.title} />
@@ -87,6 +101,12 @@ export const Shop = () => {
                 <div className={style.price}>
                   {item.totalPrice || item.price * (counts[item.id] || 1)} руб.
                 </div>
+                <button
+                  className={style.deleteItemsFromBasketShop}
+                  onClick={() => deleteItem(item.id)}
+                >
+                  <img src={deleteICO} alt="deleteItem" />
+                </button>
               </div>
             </div>
           </div>
