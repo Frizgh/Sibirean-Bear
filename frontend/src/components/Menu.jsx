@@ -128,9 +128,6 @@ const Menu = () => {
                         </div>
                       </div>
                     </div>
-                    
-                    {/* Decorative corner accent */}
-                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-[hsl(var(--bear-teal))]/40 to-transparent"></div>
                   </div>
                 </div>
 
