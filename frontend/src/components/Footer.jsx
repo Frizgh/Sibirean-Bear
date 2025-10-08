@@ -13,11 +13,11 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <Coffee className="w-8 h-8 text-[hsl(var(--bear-teal-light))]" />
               <span className="text-2xl font-bold font-['Playfair_Display']">
-                Siberian Bear
+                Сибирский Медведь
               </span>
             </div>
             <p className="text-white/70 mb-4">
-              Craft coffee with a wild spirit. Brewing excellence since 2024.
+              Крафтовый кофе с диким духом. Варим совершенство с 2024 года.
             </p>
             <div className="flex gap-4">
               <a
@@ -43,26 +43,26 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Быстрые ссылки</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#menu" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  Menu
+                  Меню
                 </a>
               </li>
               <li>
                 <a href="#rewards" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  Rewards Program
+                  Программа лояльности
                 </a>
               </li>
               <li>
                 <a href="#locations" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  Locations
+                  Локации
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  About Us
+                  О нас
                 </a>
               </li>
             </ul>
@@ -70,26 +70,26 @@ const Footer = () => {
 
           {/* Customer Service */}
           <div>
-            <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Customer Service</h3>
+            <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Поддержка клиентов</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  Contact Us
+                  Связаться с нами
                 </a>
               </li>
               <li>
                 <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  FAQs
+                  Часто задаваемые вопросы
                 </a>
               </li>
               <li>
                 <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  Gift Cards
+                  Подарочные карты
                 </a>
               </li>
               <li>
                 <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                  Careers
+                  Вакансии
                 </a>
               </li>
             </ul>
@@ -97,7 +97,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Contact</h3>
+            <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Контакты</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Mail className="w-5 h-5 text-[hsl(var(--bear-teal-light))] mt-0.5 flex-shrink-0" />
@@ -105,11 +105,11 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 text-[hsl(var(--bear-teal-light))] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70">+1 (555) 123-4567</span>
+                <span className="text-white/70">+7 (495) 123-45-67</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 text-[hsl(var(--bear-teal-light))] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70">123 Coffee Street, Brew City</span>
+                <span className="text-white/70">ул. Кофейная, 123, Москва</span>
               </li>
             </ul>
           </div>
@@ -119,17 +119,17 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm">
-              © {currentYear} Siberian Bear Coffee. All rights reserved.
+              © {currentYear} Сибирский Медведь. Все права защищены.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                Privacy Policy
+                Политика конфиденциальности
               </a>
               <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                Terms of Service
+                Условия использования
               </a>
               <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
-                Cookie Policy
+                Политика cookie
               </a>
             </div>
           </div>

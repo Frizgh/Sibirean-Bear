@@ -9,10 +9,10 @@ const Locations = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-[hsl(var(--bear-teal))] mb-4 font-['Playfair_Display']">
-            Find Us
+            Найдите нас
           </h2>
           <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto">
-            Visit any of our locations for the perfect cup of coffee
+            Посетите любую из наших локаций за идеальной чашкой кофе
           </p>
         </div>
 
@@ -57,7 +57,7 @@ const Locations = () => {
                 </div>
 
                 <button className="w-full mt-6 py-3 bg-[hsl(var(--bear-cream))] text-[hsl(var(--bear-teal))] font-semibold rounded-lg hover:bg-[hsl(var(--bear-teal))] hover:text-white transition-all duration-300">
-                  Get Directions
+                  Построить маршрут
                 </button>
               </CardContent>
             </Card>
