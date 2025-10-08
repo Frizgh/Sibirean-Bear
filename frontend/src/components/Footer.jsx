@@ -73,22 +73,22 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   FAQs
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   Gift Cards
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   Careers
                 </a>
               </li>
