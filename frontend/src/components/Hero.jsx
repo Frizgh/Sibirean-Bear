@@ -40,7 +40,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             size="lg"
-            className="bg-[hsl(var(--bear-brown))] hover:bg-[hsl(var(--bear-green))] text-white text-lg px-8 py-6 group"
+            className="bg-[hsl(var(--bear-teal))] hover:bg-[hsl(var(--bear-teal-dark))] text-white text-lg px-8 py-6 group shadow-2xl"
             onClick={() =>
               document.getElementById("menu").scrollIntoView({ behavior: "smooth" })
             }
