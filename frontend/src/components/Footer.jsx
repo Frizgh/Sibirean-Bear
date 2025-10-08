@@ -100,15 +100,15 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <Mail className="w-5 h-5 text-[hsl(var(--bear-gold))] mt-0.5 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[hsl(var(--bear-teal-light))] mt-0.5 flex-shrink-0" />
                 <span className="text-white/70">info@siberianbear.coffee</span>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="w-5 h-5 text-[hsl(var(--bear-gold))] mt-0.5 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-[hsl(var(--bear-teal-light))] mt-0.5 flex-shrink-0" />
                 <span className="text-white/70">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="w-5 h-5 text-[hsl(var(--bear-gold))] mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-[hsl(var(--bear-teal-light))] mt-0.5 flex-shrink-0" />
                 <span className="text-white/70">123 Coffee Street, Brew City</span>
               </li>
             </ul>
