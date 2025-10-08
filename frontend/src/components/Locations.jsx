@@ -8,7 +8,7 @@ const Locations = () => {
     <section id="locations" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-[hsl(var(--bear-brown))] mb-4 font-['Playfair_Display']">
+          <h2 className="text-5xl font-bold text-[hsl(var(--bear-teal))] mb-4 font-['Playfair_Display']">
             Find Us
           </h2>
           <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto">
