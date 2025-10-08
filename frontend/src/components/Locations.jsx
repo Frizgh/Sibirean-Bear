@@ -20,7 +20,7 @@ const Locations = () => {
           {locations.map((location, index) => (
             <Card
               key={location.id}
-              className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-[hsl(var(--bear-brown))] group"
+              className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-[hsl(var(--bear-teal))] group"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.15}s both`
               }}
