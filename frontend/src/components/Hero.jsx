@@ -51,7 +51,7 @@ const Hero = () => {
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--bear-brown))] text-lg px-8 py-6"
+            className="border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--bear-teal))] text-lg px-8 py-6 shadow-xl"
           >
             Find a Store
           </Button>
