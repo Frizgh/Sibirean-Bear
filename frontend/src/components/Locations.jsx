@@ -56,7 +56,7 @@ const Locations = () => {
                   </div>
                 </div>
 
-                <button className="w-full mt-6 py-3 bg-[hsl(var(--bear-cream))] text-[hsl(var(--bear-brown))] font-semibold rounded-lg hover:bg-[hsl(var(--bear-brown))] hover:text-white transition-all duration-300">
+                <button className="w-full mt-6 py-3 bg-[hsl(var(--bear-cream))] text-[hsl(var(--bear-teal))] font-semibold rounded-lg hover:bg-[hsl(var(--bear-teal))] hover:text-white transition-all duration-300">
                   Get Directions
                 </button>
               </CardContent>
