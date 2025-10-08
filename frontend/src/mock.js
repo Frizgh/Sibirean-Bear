@@ -135,17 +135,17 @@ export const aboutData = {
     {
       title: "Quality Beans",
       description: "Hand-selected premium coffee beans from sustainable farms",
-      image: "https://images.unsplash.com/photo-1675306408031-a9aad9f23308?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFuc3xlbnwwfHx8fDE3NTk5MzI4NjV8MA&ixlib=rb-4.1.0&q=85"
+      image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       title: "Expert Craftsmanship",
       description: "Our skilled baristas create art in every cup",
-      image: "https://images.unsplash.com/photo-1532713107108-dfb5d8d2fc42?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxiYXJpc3RhfGVufDB8fHx8MTc1OTkzMjg3MHww&ixlib=rb-4.1.0&q=85"
+      image: "https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       title: "Community Focus",
       description: "Building connections one cup at a time",
-      image: "https://images.pexels.com/photos/302887/pexels-photo-302887.jpeg"
+      image: "https://images.pexels.com/photos/3321796/pexels-photo-3321796.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ]
 };
