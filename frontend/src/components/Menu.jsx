@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { Coffee } from "lucide-react";
 import { menuItems } from "../mock";
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [expandedCard, setExpandedCard] = useState(null);
+  const [flippedCards, setFlippedCards] = useState({});
   const categories = ["All", "Hot Drinks", "Cold Drinks"];
 
   const filteredItems =
@@ -14,8 +13,11 @@ const Menu = () => {
       ? menuItems
       : menuItems.filter((item) => item.category === selectedCategory);
 
-  const toggleCard = (id) => {
-    setExpandedCard(expandedCard === id ? null : id);
+  const toggleFlip = (id) => {
+    setFlippedCards(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
   };
 
   return (
@@ -50,78 +52,115 @@ const Menu = () => {
         {/* Menu Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredItems.map((item, index) => (
-            <Card
+            <div
               key={item.id}
-              className={`overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white group cursor-pointer border-2 ${
-                expandedCard === item.id
-                  ? "border-[hsl(var(--bear-teal))] shadow-2xl"
-                  : "border-transparent"
-              }`}
-              onClick={() => toggleCard(item.id)}
+              className="flip-card h-[500px]"
               style={{
-                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+                perspective: "1000px"
               }}
+              onClick={() => toggleFlip(item.id)}
             >
-              <div className="relative overflow-hidden h-64">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className={`w-full h-full object-cover transition-transform duration-700 ${
-                    expandedCard === item.id ? "scale-110" : "group-hover:scale-105"
-                  }`}
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300 ${
-                  expandedCard === item.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                }`}></div>
-                <Badge className="absolute top-4 right-4 bg-[hsl(var(--bear-teal))] text-white">
-                  {item.category}
-                </Badge>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-2xl font-bold text-[hsl(var(--bear-teal))] font-['Playfair_Display'] flex-1">
-                    {item.name}
-                  </h3>
-                  {expandedCard === item.id ? (
-                    <ChevronUp className="w-6 h-6 text-[hsl(var(--bear-teal))] flex-shrink-0 ml-2" />
-                  ) : (
-                    <ChevronDown className="w-6 h-6 text-[hsl(var(--muted-foreground))] group-hover:text-[hsl(var(--bear-teal))] flex-shrink-0 ml-2 transition-colors duration-300" />
-                  )}
-                </div>
-                <p className="text-[hsl(var(--muted-foreground))] mb-4">
-                  {item.description}
-                </p>
-
-                {/* Expanded Content */}
+              <div
+                className={`flip-card-inner relative w-full h-full transition-transform duration-700 cursor-pointer ${
+                  flippedCards[item.id] ? "rotate-y-180" : ""
+                }`}
+                style={{
+                  transformStyle: "preserve-3d"
+                }}
+              >
+                {/* Front Side */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ${
-                    expandedCard === item.id ? "max-h-96 opacity-100 mb-4" : "max-h-0 opacity-0"
-                  }`}
+                  className="flip-card-front absolute w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden"
+                  style={{
+                    backfaceVisibility: "hidden"
+                  }}
                 >
-                  <div className="pt-4 border-t border-[hsl(var(--border))] space-y-3">
-                    <p className="text-sm text-[hsl(var(--bear-dark))]">
-                      {item.details}
-                    </p>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[hsl(var(--muted-foreground))]">Ingredients:</span>
-                      <span className="text-[hsl(var(--bear-dark))] font-medium">{item.ingredients}</span>
+                  <div className="relative overflow-hidden h-64">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <Badge className="absolute top-4 right-4 bg-[hsl(var(--bear-teal))] text-white">
+                      {item.category}
+                    </Badge>
+                  </div>
+                  
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-2xl font-bold text-[hsl(var(--bear-teal))] font-['Playfair_Display'] flex-1">
+                        {item.name}
+                      </h3>
+                      <span className="text-2xl font-bold text-[hsl(var(--bear-green))] flex-shrink-0 ml-4">
+                        {item.price}
+                      </span>
                     </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[hsl(var(--muted-foreground))]">Calories:</span>
-                      <span className="text-[hsl(var(--bear-dark))] font-medium">{item.calories}</span>
+                    <p className="text-[hsl(var(--muted-foreground))] mb-6">
+                      {item.description}
+                    </p>
+
+                    <div className="flex items-center justify-center gap-2 text-sm text-[hsl(var(--bear-teal))] font-medium mt-8">
+                      <Coffee className="w-5 h-5" />
+                      <span>Click to see details</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Back Side */}
+                <div
+                  className="flip-card-back absolute w-full h-full bg-gradient-to-br from-[hsl(var(--bear-teal))] to-[hsl(var(--bear-teal-dark))] rounded-2xl shadow-2xl overflow-hidden"
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)"
+                  }}
+                >
+                  <div className="h-full flex flex-col p-6 text-white">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-2xl font-bold font-['Playfair_Display']">
+                        {item.name}
+                      </h3>
+                      <Coffee className="w-8 h-8 text-white/80" />
+                    </div>
+
+                    <div className="relative overflow-hidden rounded-xl mb-4 h-40 group/img">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-125"
+                      />
+                    </div>
+
+                    <div className="flex-1 space-y-3 text-sm">
+                      <p className="text-white/95 leading-relaxed">
+                        {item.details}
+                      </p>
+                      
+                      <div className="pt-3 border-t border-white/20 space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-white/80">Ingredients:</span>
+                          <span className="text-white font-medium text-right">{item.ingredients}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-white/80">Calories:</span>
+                          <span className="text-white font-medium">{item.calories}</span>
+                        </div>
+                        <div className="flex justify-between items-center pt-2">
+                          <span className="text-white/80">Price:</span>
+                          <span className="text-2xl font-bold text-[hsl(var(--bear-gold))]">{item.price}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-2 text-sm text-white/90 font-medium mt-4 pt-4 border-t border-white/20">
+                      <Coffee className="w-5 h-5" />
+                      <span>Click to return</span>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Price Banner - Full Width */}
-              <div className="price-shimmer text-center py-4 px-6 rounded-b-lg">
-                <span className="text-2xl font-bold text-white drop-shadow-lg">
-                  {item.price}
-                </span>
-              </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>

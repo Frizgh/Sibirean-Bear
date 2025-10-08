@@ -1,11 +1,11 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { Star, Gift, Cake, Zap } from "lucide-react";
+import { Coffee, Gift, Cake, Zap } from "lucide-react";
 import { rewardsData } from "../mock";
 
 const iconMap = {
-  star: Star,
+  star: Coffee,
   gift: Gift,
   cake: Cake,
   zap: Zap
