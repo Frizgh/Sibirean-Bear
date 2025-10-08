@@ -71,40 +71,66 @@ const Menu = () => {
               >
                 {/* Front Side */}
                 <div
-                  className="flip-card-front absolute w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden"
+                  className="flip-card-front absolute w-full h-full rounded-2xl shadow-xl overflow-hidden"
                   style={{
                     backfaceVisibility: "hidden"
                   }}
                 >
-                  <div className="relative overflow-hidden h-64">
+                  <div className="relative h-full overflow-hidden group/front">
+                    {/* Full Height Image */}
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover/front:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <Badge className="absolute top-4 right-4 bg-[hsl(var(--bear-teal))] text-white">
+                    
+                    {/* Gradient Overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--bear-teal))]/30 via-transparent to-[hsl(var(--bear-green))]/20"></div>
+                    
+                    {/* Category Badge */}
+                    <Badge className="absolute top-6 right-6 bg-[hsl(var(--bear-teal))]/90 backdrop-blur-sm text-white px-4 py-2 text-sm font-semibold shadow-lg">
                       {item.category}
                     </Badge>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-2xl font-bold text-[hsl(var(--bear-teal))] font-['Playfair_Display'] flex-1">
-                        {item.name}
-                      </h3>
-                      <span className="text-2xl font-bold text-[hsl(var(--bear-green))] flex-shrink-0 ml-4">
-                        {item.price}
-                      </span>
+                    
+                    {/* Content */}
+                    <div className="absolute inset-0 flex flex-col justify-between p-8">
+                      {/* Top Section - Coffee Icon with glow */}
+                      <div className="flex justify-start">
+                        <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-2xl">
+                          <Coffee className="w-7 h-7 text-white" />
+                        </div>
+                      </div>
+                      
+                      {/* Bottom Section - Title, Description, Price */}
+                      <div className="space-y-3">
+                        <div className="flex items-end justify-between gap-4">
+                          <h3 className="text-4xl font-bold text-white font-['Playfair_Display'] leading-tight drop-shadow-2xl">
+                            {item.name}
+                          </h3>
+                          <div className="flex flex-col items-end">
+                            <span className="text-3xl font-bold text-[hsl(var(--bear-green))] drop-shadow-lg">
+                              {item.price}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        <p className="text-white/90 text-base leading-relaxed drop-shadow-lg">
+                          {item.description}
+                        </p>
+                        
+                        {/* Click indicator with animation */}
+                        <div className="flex items-center gap-2 text-white/80 text-sm font-medium pt-2">
+                          <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center animate-pulse">
+                            <Coffee className="w-4 h-4" />
+                          </div>
+                          <span className="drop-shadow">Tap for details</span>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-[hsl(var(--muted-foreground))] mb-6">
-                      {item.description}
-                    </p>
-
-                    <div className="flex items-center justify-center gap-2 text-sm text-[hsl(var(--bear-teal))] font-medium mt-8">
-                      <Coffee className="w-5 h-5" />
-                      <span>Click to see details</span>
-                    </div>
+                    
+                    {/* Decorative corner accent */}
+                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-[hsl(var(--bear-teal))]/40 to-transparent"></div>
                   </div>
                 </div>
 
