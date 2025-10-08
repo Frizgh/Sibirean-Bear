@@ -21,54 +21,56 @@ code {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 20 14% 10%;
+    --foreground: 195 50% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 20 14% 10%;
+    --card-foreground: 195 50% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14% 10%;
-    --primary: 25 45% 28%;
-    --primary-foreground: 30 40% 95%;
-    --secondary: 30 40% 95%;
-    --secondary-foreground: 20 14% 10%;
-    --muted: 30 40% 95%;
-    --muted-foreground: 25 8% 45%;
-    --accent: 145 35% 25%;
-    --accent-foreground: 30 40% 95%;
+    --popover-foreground: 195 50% 15%;
+    --primary: 180 55% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 30% 95%;
+    --secondary-foreground: 195 50% 15%;
+    --muted: 180 30% 95%;
+    --muted-foreground: 180 10% 45%;
+    --accent: 160 60% 40%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 25 45% 28%;
+    --border: 180 20% 85%;
+    --input: 180 20% 85%;
+    --ring: 180 55% 45%;
     --radius: 0.5rem;
     
-    /* Custom colors for Siberian Bear */
-    --bear-brown: 25 45% 28%;
+    /* Custom colors for Siberian Bear - Teal Theme */
+    --bear-teal: 180 55% 45%;
+    --bear-teal-dark: 185 60% 35%;
+    --bear-teal-light: 180 45% 65%;
     --bear-cream: 30 40% 95%;
-    --bear-dark: 20 14% 10%;
-    --bear-green: 145 35% 25%;
+    --bear-dark: 195 50% 15%;
+    --bear-green: 160 60% 40%;
     --bear-gold: 38 90% 55%;
   }
   
   .dark {
-    --background: 20 14% 10%;
-    --foreground: 30 40% 95%;
-    --card: 20 14% 10%;
-    --card-foreground: 30 40% 95%;
-    --popover: 20 14% 10%;
-    --popover-foreground: 30 40% 95%;
-    --primary: 30 40% 95%;
-    --primary-foreground: 25 45% 28%;
-    --secondary: 25 20% 20%;
-    --secondary-foreground: 30 40% 95%;
-    --muted: 25 20% 20%;
-    --muted-foreground: 25 8% 60%;
-    --accent: 145 35% 35%;
-    --accent-foreground: 30 40% 95%;
+    --background: 195 50% 15%;
+    --foreground: 180 30% 95%;
+    --card: 195 50% 15%;
+    --card-foreground: 180 30% 95%;
+    --popover: 195 50% 15%;
+    --popover-foreground: 180 30% 95%;
+    --primary: 180 30% 95%;
+    --primary-foreground: 180 55% 45%;
+    --secondary: 185 40% 25%;
+    --secondary-foreground: 180 30% 95%;
+    --muted: 185 40% 25%;
+    --muted-foreground: 180 20% 60%;
+    --accent: 160 60% 50%;
+    --accent-foreground: 180 30% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 25 20% 25%;
-    --input: 25 20% 25%;
-    --ring: 30 40% 95%;
+    --border: 185 40% 30%;
+    --input: 185 40% 30%;
+    --ring: 180 30% 95%;
   }
 }
 
@@ -128,6 +130,24 @@ code {
   }
 }
 
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 1s ease-out;
 }
@@ -138,4 +158,17 @@ code {
 
 .animate-slide-in-right {
   animation: slideInRight 0.8s ease-out;
+}
+
+.price-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--bear-green)) 0%,
+    hsl(var(--bear-green)) 40%,
+    hsl(160 70% 50%) 50%,
+    hsl(var(--bear-green)) 60%,
+    hsl(var(--bear-green)) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite linear;
 }

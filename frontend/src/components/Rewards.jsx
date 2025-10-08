@@ -13,7 +13,7 @@ const iconMap = {
 
 const Rewards = () => {
   return (
-    <section id="rewards" className="py-20 bg-[hsl(var(--bear-brown))] text-white relative overflow-hidden">
+    <section id="rewards" className="py-20 bg-[hsl(var(--bear-teal))] text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -43,8 +43,8 @@ const Rewards = () => {
                 }}
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-[hsl(var(--bear-gold))]/20 rounded-full flex items-center justify-center">
-                    <IconComponent className="w-8 h-8 text-[hsl(var(--bear-gold))]" />
+                  <div className="w-16 h-16 mx-auto mb-4 bg-[hsl(var(--bear-green))]/30 rounded-full flex items-center justify-center">
+                    <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2 font-['Playfair_Display']">
                     {benefit.title}
@@ -59,7 +59,7 @@ const Rewards = () => {
         <div className="text-center">
           <Button
             size="lg"
-            className="bg-[hsl(var(--bear-gold))] hover:bg-[hsl(var(--bear-gold))]/90 text-[hsl(var(--bear-dark))] text-lg px-8 py-6 font-bold"
+            className="bg-white hover:bg-white/90 text-[hsl(var(--bear-teal))] text-lg px-8 py-6 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
             Join Now - It's Free!
           </Button>

@@ -15,7 +15,10 @@ export const menuItems = [
     description: "Smooth espresso with steamed milk and delicate foam",
     price: "$4.50",
     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBkcmlua3N8ZW58MHx8fHwxNzU5OTMyODAxfDA&ixlib=rb-4.1.0&q=85",
-    category: "Hot Drinks"
+    category: "Hot Drinks",
+    ingredients: "Espresso, Steamed Milk, Milk Foam",
+    calories: "190 cal",
+    details: "Our signature latte made with premium espresso beans and perfectly steamed milk. A classic choice for coffee lovers."
   },
   {
     id: 2,
@@ -23,7 +26,10 @@ export const menuItems = [
     description: "Our signature blended coffee drink with a wild twist",
     price: "$5.50",
     image: "https://images.unsplash.com/photo-1627998691167-4dab0dfcae9f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxjb2ZmZWUlMjBkcmlua3N8ZW58MHx8fHwxNzU5OTMyODAxfDA&ixlib=rb-4.1.0&q=85",
-    category: "Cold Drinks"
+    category: "Cold Drinks",
+    ingredients: "Coffee, Ice, Milk, Whipped Cream, Chocolate Sauce",
+    calories: "420 cal",
+    details: "A decadent blended beverage topped with whipped cream and chocolate drizzle. Perfect for a sweet treat on a warm day."
   },
   {
     id: 3,
@@ -31,7 +37,10 @@ export const menuItems = [
     description: "Cold-brewed perfection over ice",
     price: "$4.00",
     image: "https://images.unsplash.com/photo-1534414671319-4fc58cc112e1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxjb2ZmZWUlMjBkcmlua3N8ZW58MHx8fHwxNzU5OTMyODAxfDA&ixlib=rb-4.1.0&q=85",
-    category: "Cold Drinks"
+    category: "Cold Drinks",
+    ingredients: "Cold Brew Coffee, Ice",
+    calories: "5 cal",
+    details: "Slow-steeped for 20 hours to create a smooth, naturally sweet flavor. Served over ice for maximum refreshment."
   },
   {
     id: 4,
@@ -39,7 +48,10 @@ export const menuItems = [
     description: "Rich espresso with perfectly frothed milk",
     price: "$4.25",
     image: "https://images.unsplash.com/photo-1626041042756-57215f98ca54?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxsYXR0ZSUyMGNhcHB1Y2Npbm98ZW58MHx8fHwxNzU5OTMyODA4fDA&ixlib=rb-4.1.0&q=85",
-    category: "Hot Drinks"
+    category: "Hot Drinks",
+    ingredients: "Espresso, Steamed Milk, Milk Foam",
+    calories: "120 cal",
+    details: "A traditional Italian favorite with equal parts espresso, steamed milk, and foam. Bold and balanced."
   },
   {
     id: 5,
@@ -47,7 +59,10 @@ export const menuItems = [
     description: "Espresso with chocolate and steamed milk",
     price: "$5.00",
     image: "https://images.unsplash.com/photo-1578730170052-ac626460cc5f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHw0fHxsYXR0ZSUyMGNhcHB1Y2Npbm98ZW58MHx8fHwxNzU5OTMyODA4fDA&ixlib=rb-4.1.0&q=85",
-    category: "Hot Drinks"
+    category: "Hot Drinks",
+    ingredients: "Espresso, Chocolate Sauce, Steamed Milk, Whipped Cream",
+    calories: "360 cal",
+    details: "Rich chocolate meets bold espresso in this indulgent drink. Topped with whipped cream for extra luxury."
   },
   {
     id: 6,
@@ -55,7 +70,10 @@ export const menuItems = [
     description: "Velvety microfoam over double espresso",
     price: "$4.75",
     image: "https://images.unsplash.com/photo-1504705707-2159776e0146?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxsYXR0ZSUyMGNhcHB1Y2Npbm98ZW58MHx8fHwxNzU5OTMyODA4fDA&ixlib=rb-4.1.0&q=85",
-    category: "Hot Drinks"
+    category: "Hot Drinks",
+    ingredients: "Double Espresso, Microfoam Milk",
+    calories: "170 cal",
+    details: "A smooth, velvety coffee experience with rich espresso flavor. The microfoam creates a silky texture."
   }
 ];
 

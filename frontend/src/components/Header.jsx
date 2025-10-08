@@ -26,12 +26,12 @@ const Header = ({ scrolled }) => {
           <a href="/" className="flex items-center space-x-2 group">
             <Coffee
               className={`w-8 h-8 transition-colors duration-300 ${
-                scrolled ? "text-[hsl(var(--bear-brown))]" : "text-white"
+                scrolled ? "text-[hsl(var(--bear-teal))]" : "text-white"
               }`}
             />
             <span
               className={`text-2xl font-bold font-['Playfair_Display'] transition-colors duration-300 ${
-                scrolled ? "text-[hsl(var(--bear-brown))]" : "text-white"
+                scrolled ? "text-[hsl(var(--bear-teal))]" : "text-white"
               }`}
             >
               Siberian Bear
@@ -44,7 +44,7 @@ const Header = ({ scrolled }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-[hsl(var(--bear-gold))] ${
+                className={`text-sm font-medium transition-colors duration-300 hover:text-[hsl(var(--bear-teal-light))] ${
                   scrolled ? "text-[hsl(var(--bear-dark))]" : "text-white"
                 }`}
               >
@@ -52,7 +52,7 @@ const Header = ({ scrolled }) => {
               </a>
             ))}
             <Button
-              className="bg-[hsl(var(--bear-brown))] hover:bg-[hsl(var(--bear-green))] text-white"
+              className="bg-[hsl(var(--bear-teal))] hover:bg-[hsl(var(--bear-teal-dark))] text-white"
             >
               Order Now
             </Button>
@@ -93,7 +93,7 @@ const Header = ({ scrolled }) => {
               </a>
             ))}
             <div className="px-4 pt-2">
-              <Button className="w-full bg-[hsl(var(--bear-brown))] hover:bg-[hsl(var(--bear-green))] text-white">
+              <Button className="w-full bg-[hsl(var(--bear-teal))] hover:bg-[hsl(var(--bear-teal-dark))] text-white">
                 Order Now
               </Button>
             </div>
