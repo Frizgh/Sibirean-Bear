@@ -61,7 +61,7 @@ const Rewards = () => {
             size="lg"
             className="bg-white hover:bg-white/90 text-[hsl(var(--bear-teal))] text-lg px-8 py-6 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
-            Join Now - It's Free!
+            Присоединиться бесплатно!
           </Button>
         </div>
       </div>

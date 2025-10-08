@@ -4,12 +4,12 @@ import { Coffee } from "lucide-react";
 import { menuItems } from "../mock";
 
 const Menu = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("Все");
   const [flippedCards, setFlippedCards] = useState({});
-  const categories = ["All", "Hot Drinks", "Cold Drinks"];
+  const categories = ["Все", "Горячие напитки", "Холодные напитки"];
 
   const filteredItems =
-    selectedCategory === "All"
+    selectedCategory === "Все"
       ? menuItems
       : menuItems.filter((item) => item.category === selectedCategory);
 
@@ -25,10 +25,10 @@ const Menu = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-[hsl(var(--bear-teal))] mb-4 font-['Playfair_Display']">
-            Our Menu
+            Наше меню
           </h2>
           <p className="text-lg text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto">
-            Handcrafted beverages made with the finest beans from around the world
+            Напитки ручной работы из лучших зерен со всего мира
           </p>
         </div>
 
@@ -124,7 +124,7 @@ const Menu = () => {
                           <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center animate-pulse">
                             <Coffee className="w-4 h-4" />
                           </div>
-                          <span className="drop-shadow">Tap for details</span>
+                          <span className="drop-shadow">Нажмите для деталей</span>
                         </div>
                       </div>
                     </div>
@@ -162,15 +162,15 @@ const Menu = () => {
                       
                       <div className="pt-3 border-t border-white/20 space-y-2">
                         <div className="flex justify-between items-center">
-                          <span className="text-white/80">Ingredients:</span>
+                          <span className="text-white/80">Ингредиенты:</span>
                           <span className="text-white font-medium text-right">{item.ingredients}</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-white/80">Calories:</span>
+                          <span className="text-white/80">Калории:</span>
                           <span className="text-white font-medium">{item.calories}</span>
                         </div>
                         <div className="flex justify-between items-center pt-2">
-                          <span className="text-white/80">Price:</span>
+                          <span className="text-white/80">Цена:</span>
                           <span className="text-2xl font-bold text-[hsl(var(--bear-gold))]">{item.price}</span>
                         </div>
                       </div>
@@ -178,7 +178,7 @@ const Menu = () => {
 
                     <div className="flex items-center justify-center gap-2 text-sm text-white/90 font-medium mt-4 pt-4 border-t border-white/20">
                       <Coffee className="w-5 h-5" />
-                      <span>Click to return</span>
+                      <span>Нажмите, чтобы вернуться</span>
                     </div>
                   </div>
                 </div>

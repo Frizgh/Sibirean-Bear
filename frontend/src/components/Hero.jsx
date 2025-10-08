@@ -53,7 +53,7 @@ const Hero = () => {
             variant="outline"
             className="border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--bear-teal))] text-lg px-8 py-6 shadow-xl"
           >
-            Find a Store
+            Найти кофейню
           </Button>
         </div>
       </div>

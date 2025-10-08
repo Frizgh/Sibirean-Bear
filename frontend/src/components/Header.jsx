@@ -6,10 +6,10 @@ const Header = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Menu", href: "#menu" },
-    { name: "Rewards", href: "#rewards" },
-    { name: "Locations", href: "#locations" },
-    { name: "About", href: "#about" }
+    { name: "Меню", href: "#menu" },
+    { name: "Награды", href: "#rewards" },
+    { name: "Локации", href: "#locations" },
+    { name: "О нас", href: "#about" }
   ];
 
   return (
@@ -34,7 +34,7 @@ const Header = ({ scrolled }) => {
                 scrolled ? "text-[hsl(var(--bear-teal))]" : "text-white"
               }`}
             >
-              Siberian Bear
+              Сибирский Медведь
             </span>
           </a>
 
@@ -54,7 +54,7 @@ const Header = ({ scrolled }) => {
             <Button
               className="bg-[hsl(var(--bear-teal))] hover:bg-[hsl(var(--bear-teal-dark))] text-white"
             >
-              Order Now
+              Заказать сейчас
             </Button>
           </div>
 
@@ -94,7 +94,7 @@ const Header = ({ scrolled }) => {
             ))}
             <div className="px-4 pt-2">
               <Button className="w-full bg-[hsl(var(--bear-teal))] hover:bg-[hsl(var(--bear-teal-dark))] text-white">
-                Order Now
+                Заказать сейчас
               </Button>
             </div>
           </div>

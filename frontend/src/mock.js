@@ -1,150 +1,150 @@
 // Mock data for Siberian Bear Coffee Shop
 
 export const heroData = {
-  title: "Siberian Bear",
-  subtitle: "Craft Coffee. Wild Spirit.",
-  description: "Experience the warmth of premium coffee in every cup",
-  ctaText: "Explore Menu",
+  title: "Сибирский Медведь",
+  subtitle: "Крафтовый кофе. Дикий дух.",
+  description: "Почувствуйте тепло премиального кофе в каждой чашке",
+  ctaText: "Посмотреть меню",
   backgroundImage: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920"
 };
 
 export const menuItems = [
   {
     id: 1,
-    name: "Classic Latte",
-    description: "Smooth espresso with steamed milk and delicate foam",
-    price: "$4.50",
+    name: "Классический латте",
+    description: "Мягкий эспрессо с паровым молоком и нежной пенкой",
+    price: "350₽",
     image: "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600",
-    category: "Hot Drinks",
-    ingredients: "Espresso, Steamed Milk, Milk Foam",
-    calories: "190 cal",
-    details: "Our signature latte made with premium espresso beans and perfectly steamed milk. A classic choice for coffee lovers."
+    category: "Горячие напитки",
+    ingredients: "Эспрессо, паровое молоко, молочная пена",
+    calories: "190 ккал",
+    details: "Наш фирменный латте из премиальных зерен эспрессо с идеально взбитым молоком. Классический выбор для любителей кофе."
   },
   {
     id: 2,
-    name: "Bear Frappuccino",
-    description: "Our signature blended coffee drink with a wild twist",
-    price: "$5.50",
+    name: "Медвежий фраппучино",
+    description: "Наш фирменный смешанный кофейный напиток с диким характером",
+    price: "450₽",
     image: "https://images.pexels.com/photos/1833399/pexels-photo-1833399.jpeg?auto=compress&cs=tinysrgb&w=600",
-    category: "Cold Drinks",
-    ingredients: "Coffee, Ice, Milk, Whipped Cream, Chocolate Sauce",
-    calories: "420 cal",
-    details: "A decadent blended beverage topped with whipped cream and chocolate drizzle. Perfect for a sweet treat on a warm day."
+    category: "Холодные напитки",
+    ingredients: "Кофе, лёд, молоко, взбитые сливки, шоколадный соус",
+    calories: "420 ккал",
+    details: "Роскошный смешанный напиток со взбитыми сливками и шоколадной глазурью. Идеален для сладкого удовольствия в теплый день."
   },
   {
     id: 3,
-    name: "Iced Brew",
-    description: "Cold-brewed perfection over ice",
-    price: "$4.00",
+    name: "Холодный брю",
+    description: "Холодное совершенство со льдом",
+    price: "320₽",
     image: "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=600",
-    category: "Cold Drinks",
-    ingredients: "Cold Brew Coffee, Ice",
-    calories: "5 cal",
-    details: "Slow-steeped for 20 hours to create a smooth, naturally sweet flavor. Served over ice for maximum refreshment."
+    category: "Холодные напитки",
+    ingredients: "Кофе холодной заварки, лёд",
+    calories: "5 ккал",
+    details: "Медленно завариваемый в течение 20 часов для создания гладкого, естественно сладкого вкуса. Подается со льдом для максимальной свежести."
   },
   {
     id: 4,
-    name: "Cappuccino",
-    description: "Rich espresso with perfectly frothed milk",
-    price: "$4.25",
+    name: "Капучино",
+    description: "Насыщенный эспрессо с идеально взбитым молоком",
+    price: "340₽",
     image: "https://images.pexels.com/photos/2318027/pexels-photo-2318027.jpeg?auto=compress&cs=tinysrgb&w=600",
-    category: "Hot Drinks",
-    ingredients: "Espresso, Steamed Milk, Milk Foam",
-    calories: "120 cal",
-    details: "A traditional Italian favorite with equal parts espresso, steamed milk, and foam. Bold and balanced."
+    category: "Горячие напитки",
+    ingredients: "Эспрессо, паровое молоко, молочная пена",
+    calories: "120 ккал",
+    details: "Традиционный итальянский фаворит с равными частями эспрессо, парового молока и пены. Смелый и сбалансированный."
   },
   {
     id: 5,
-    name: "Mocha Delight",
-    description: "Espresso with chocolate and steamed milk",
-    price: "$5.00",
+    name: "Мокко наслаждение",
+    description: "Эспрессо с шоколадом и паровым молоком",
+    price: "400₽",
     image: "https://images.pexels.com/photos/373639/pexels-photo-373639.jpeg?auto=compress&cs=tinysrgb&w=600",
-    category: "Hot Drinks",
-    ingredients: "Espresso, Chocolate Sauce, Steamed Milk, Whipped Cream",
-    calories: "360 cal",
-    details: "Rich chocolate meets bold espresso in this indulgent drink. Topped with whipped cream for extra luxury."
+    category: "Горячие напитки",
+    ingredients: "Эспрессо, шоколадный соус, паровое молоко, взбитые сливки",
+    calories: "360 ккал",
+    details: "Насыщенный шоколад встречается со смелым эспрессо в этом роскошном напитке. Увенчан взбитыми сливками для дополнительной роскоши."
   },
   {
     id: 6,
-    name: "Flat White",
-    description: "Velvety microfoam over double espresso",
-    price: "$4.75",
+    name: "Флэт уайт",
+    description: "Бархатная микропена на двойном эспрессо",
+    price: "380₽",
     image: "https://images.pexels.com/photos/4109998/pexels-photo-4109998.jpeg?auto=compress&cs=tinysrgb&w=600",
-    category: "Hot Drinks",
-    ingredients: "Double Espresso, Microfoam Milk",
-    calories: "170 cal",
-    details: "A smooth, velvety coffee experience with rich espresso flavor. The microfoam creates a silky texture."
+    category: "Горячие напитки",
+    ingredients: "Двойной эспрессо, микропена",
+    calories: "170 ккал",
+    details: "Гладкое, бархатное кофейное наслаждение с насыщенным вкусом эспрессо. Микропена создает шелковистую текстуру."
   }
 ];
 
 export const locations = [
   {
     id: 1,
-    name: "Downtown Branch",
-    address: "123 Main Street, City Center",
-    hours: "Mon-Fri: 7AM-8PM, Sat-Sun: 8AM-9PM",
-    phone: "+1 (555) 123-4567"
+    name: "Центральный филиал",
+    address: "ул. Главная, 123, Центр города",
+    hours: "Пн-Пт: 7:00-20:00, Сб-Вс: 8:00-21:00",
+    phone: "+7 (495) 123-45-67"
   },
   {
     id: 2,
-    name: "West Side Café",
-    address: "456 Oak Avenue, West District",
-    hours: "Mon-Sun: 7AM-7PM",
-    phone: "+1 (555) 234-5678"
+    name: "Западное кафе",
+    address: "пр. Дубовый, 456, Западный район",
+    hours: "Пн-Вс: 7:00-19:00",
+    phone: "+7 (495) 234-56-78"
   },
   {
     id: 3,
-    name: "North Park Store",
-    address: "789 Pine Boulevard, North Park",
-    hours: "Mon-Fri: 6:30AM-8:30PM, Sat-Sun: 7:30AM-9PM",
-    phone: "+1 (555) 345-6789"
+    name: "Северный парк",
+    address: "бул. Сосновый, 789, Северный парк",
+    hours: "Пн-Пт: 6:30-20:30, Сб-Вс: 7:30-21:00",
+    phone: "+7 (495) 345-67-89"
   }
 ];
 
 export const rewardsData = {
-  title: "Bear Rewards",
-  subtitle: "Join our loyalty program and earn with every sip",
+  title: "Медвежья награда",
+  subtitle: "Присоединяйтесь к нашей программе лояльности и зарабатывайте с каждым глотком",
   benefits: [
     {
       icon: "star",
-      title: "Earn Stars",
-      description: "Get 2 stars for every $1 spent"
+      title: "Зарабатывайте звёзды",
+      description: "Получайте 2 звезды за каждые 100₽"
     },
     {
       icon: "gift",
-      title: "Free Drinks",
-      description: "Redeem 150 stars for a free drink"
+      title: "Бесплатные напитки",
+      description: "Обменивайте 150 звёзд на бесплатный напиток"
     },
     {
       icon: "cake",
-      title: "Birthday Treat",
-      description: "Enjoy a complimentary drink on your birthday"
+      title: "Подарок на день рождения",
+      description: "Наслаждайтесь бесплатным напитком в день рождения"
     },
     {
       icon: "zap",
-      title: "Early Access",
-      description: "Be the first to try new seasonal drinks"
+      title: "Ранний доступ",
+      description: "Первыми пробуйте новые сезонные напитки"
     }
   ]
 };
 
 export const aboutData = {
-  title: "Our Story",
-  description: "Siberian Bear was born from a passion for exceptional coffee and the rugged beauty of nature. We source the finest beans from around the world and roast them with care to bring you a truly wild coffee experience.",
+  title: "Наша история",
+  description: "Сибирский Медведь родился из страсти к исключительному кофе и суровой красоте природы. Мы отбираем лучшие зерна со всего мира и обжариваем их с заботой, чтобы подарить вам по-настоящему дикое кофейное впечатление.",
   values: [
     {
-      title: "Quality Beans",
-      description: "Hand-selected premium coffee beans from sustainable farms",
+      title: "Качественные зёрна",
+      description: "Отобранные вручную премиальные кофейные зерна с устойчивых ферм",
       image: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      title: "Expert Craftsmanship",
-      description: "Our skilled baristas create art in every cup",
+      title: "Экспертное мастерство",
+      description: "Наши опытные бариста создают искусство в каждой чашке",
       image: "https://images.pexels.com/photos/324028/pexels-photo-324028.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      title: "Community Focus",
-      description: "Building connections one cup at a time",
+      title: "Забота о сообществе",
+      description: "Создаём связи по одной чашке за раз",
       image: "https://images.pexels.com/photos/3321796/pexels-photo-3321796.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ]
