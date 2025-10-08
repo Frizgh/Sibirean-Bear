@@ -32,7 +32,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2 font-['Playfair_Display'] group-hover:text-[hsl(var(--bear-gold))] transition-colors duration-300">
+                <h3 className="text-2xl font-bold mb-2 font-['Playfair_Display'] group-hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-300">
                   {value.title}
                 </h3>
                 <p className="text-white/90 leading-relaxed">
