@@ -30,7 +30,7 @@ const Locations = () => {
                   <div className="w-16 h-16 bg-[hsl(var(--bear-teal))]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[hsl(var(--bear-teal))] transition-colors duration-300">
                     <MapPin className="w-8 h-8 text-[hsl(var(--bear-teal))] group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[hsl(var(--bear-brown))] mb-4 font-['Playfair_Display']">
+                  <h3 className="text-2xl font-bold text-[hsl(var(--bear-teal))] mb-4 font-['Playfair_Display']">
                     {location.name}
                   </h3>
                 </div>
