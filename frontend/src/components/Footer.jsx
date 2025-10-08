@@ -46,22 +46,22 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 font-['Playfair_Display']">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#menu" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#menu" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   Menu
                 </a>
               </li>
               <li>
-                <a href="#rewards" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#rewards" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   Rewards Program
                 </a>
               </li>
               <li>
-                <a href="#locations" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#locations" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   Locations
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-white/70 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+                <a href="#about" className="text-white/70 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                   About Us
                 </a>
               </li>
