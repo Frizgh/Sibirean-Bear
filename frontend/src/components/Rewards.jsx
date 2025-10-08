@@ -13,45 +13,56 @@ const iconMap = {
 
 const Rewards = () => {
   return (
-    <section id="rewards" className="py-20 bg-[hsl(var(--bear-teal))] text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-        }}></div>
+    <section id="rewards" className="py-20 bg-[hsl(var(--bear-dark))] text-white relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url("https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&w=1920")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--bear-dark))] via-[hsl(var(--bear-teal-dark))]/50 to-[hsl(var(--bear-dark))]"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold mb-4 font-['Playfair_Display']">
+        <div className="text-center mb-16">
+          <h2 className="text-6xl font-bold mb-6 font-['Playfair_Display'] bg-gradient-to-r from-white via-[hsl(var(--bear-teal-light))] to-white bg-clip-text text-transparent">
             {rewardsData.title}
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             {rewardsData.subtitle}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {rewardsData.benefits.map((benefit, index) => {
             const IconComponent = iconMap[benefit.icon];
             return (
-              <Card
+              <div
                 key={index}
-                className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                className="group relative"
                 style={{
-                  animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+                  animation: `fadeInUp 0.6s ease-out ${index * 0.15}s both`
                 }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-[hsl(var(--bear-green))]/30 rounded-full flex items-center justify-center">
-                    <IconComponent className="w-8 h-8 text-white" />
+                <div className="relative h-full bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-[hsl(var(--bear-teal-light))]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--bear-teal))]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[hsl(var(--bear-teal))] to-[hsl(var(--bear-green))] rounded-2xl flex items-center justify-center shadow-xl transform group-hover:rotate-6 transition-transform duration-500">
+                      <IconComponent className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 font-['Playfair_Display'] text-white">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-white/70 text-lg leading-relaxed">{benefit.description}</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-2 font-['Playfair_Display']">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-white/80">{benefit.description}</p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             );
           })}
         </div>
@@ -59,7 +70,7 @@ const Rewards = () => {
         <div className="text-center">
           <Button
             size="lg"
-            className="bg-white hover:bg-white/90 text-[hsl(var(--bear-teal))] text-lg px-8 py-6 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="bg-gradient-to-r from-[hsl(var(--bear-teal))] to-[hsl(var(--bear-green))] hover:from-[hsl(var(--bear-teal-dark))] hover:to-[hsl(var(--bear-teal))] text-white text-xl px-12 py-8 font-bold shadow-2xl hover:shadow-[hsl(var(--bear-teal))]/50 transition-all duration-500 hover:scale-110 rounded-2xl"
           >
             Присоединиться бесплатно!
           </Button>
