@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Coffee className="w-8 h-8 text-[hsl(var(--bear-gold))]" />
+              <Coffee className="w-8 h-8 text-[hsl(var(--bear-teal-light))]" />
               <span className="text-2xl font-bold font-['Playfair_Display']">
                 Siberian Bear
               </span>
