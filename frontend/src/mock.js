@@ -5,7 +5,7 @@ export const heroData = {
   subtitle: "Craft Coffee. Wild Spirit.",
   description: "Experience the warmth of premium coffee in every cup",
   ctaText: "Explore Menu",
-  backgroundImage: "https://images.unsplash.com/photo-1521017432531-fbd92d768814"
+  backgroundImage: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920"
 };
 
 export const menuItems = [
