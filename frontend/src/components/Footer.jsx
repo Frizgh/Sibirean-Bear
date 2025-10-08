@@ -122,13 +122,13 @@ const Footer = () => {
               © {currentYear} Siberian Bear Coffee. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+              <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                 Privacy Policy
               </a>
-              <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+              <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                 Terms of Service
               </a>
-              <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-gold))] transition-colors duration-200">
+              <a href="#" className="text-white/60 hover:text-[hsl(var(--bear-teal-light))] transition-colors duration-200">
                 Cookie Policy
               </a>
             </div>
