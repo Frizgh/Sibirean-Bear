@@ -22,19 +22,19 @@ const Footer = () => {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--bear-gold))] transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--bear-teal-light))] transition-all duration-300 hover:scale-110"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--bear-gold))] transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--bear-teal-light))] transition-all duration-300 hover:scale-110"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--bear-gold))] transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[hsl(var(--bear-teal-light))] transition-all duration-300 hover:scale-110"
               >
                 <Twitter className="w-5 h-5" />
               </a>
