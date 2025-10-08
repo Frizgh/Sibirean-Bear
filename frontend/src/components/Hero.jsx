@@ -31,7 +31,7 @@ const Hero = () => {
         <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-6 font-['Playfair_Display'] animate-fade-in">
           {heroData.title}
         </h1>
-        <p className="text-2xl sm:text-3xl md:text-4xl text-[hsl(var(--bear-gold))] mb-4 font-['Playfair_Display'] italic">
+        <p className="text-2xl sm:text-3xl md:text-4xl text-[hsl(var(--bear-teal-light))] mb-4 font-['Playfair_Display'] italic">
           {heroData.subtitle}
         </p>
         <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
